@@ -1185,33 +1185,10 @@ def get_mobile_responsive_styles() -> str:
             opacity: 0.3 !important;
         }
         
-        /* HIDE SIDEBAR BY DEFAULT ON MOBILE */
-        [data-testid="stSidebar"] {
-            transform: translateX(-100%) !important;
-            transition: transform 0.3s ease !important;
-        }
-        
-        [data-testid="stSidebar"][aria-expanded="true"] {
-            transform: translateX(0) !important;
-        }
-        
-        /* Main container - FULL WIDTH */
+        /* Main container */
         .main .block-container {
-            padding: 0.5rem 0.75rem 7rem 0.75rem !important;
+            padding: 1rem 1rem 7rem 1rem !important;
             max-width: 100% !important;
-            margin-left: 0 !important;
-        }
-        
-        /* Remove left margin when sidebar collapsed */
-        .main {
-            margin-left: 0 !important;
-            width: 100% !important;
-        }
-        
-        /* Center welcome content */
-        .welcome-hero, .stMarkdown {
-            text-align: center !important;
-            width: 100% !important;
         }
         
         /* Welcome screen */
@@ -1428,30 +1405,6 @@ def get_mobile_responsive_styles() -> str:
         .source-chip {
             font-size: 11px !important;
             padding: 4px 8px !important;
-        }
-        
-        /* HIDE STREAMLIT BRANDING BADGE ON MOBILE */
-        [data-testid="stToolbar"],
-        footer,
-        #MainMenu,
-        .stDeployButton,
-        [data-testid="stStatusWidget"],
-        .viewerBadge_container__1QSob,
-        .styles_viewerBadge__1yB5_ {
-            display: none !important;
-            visibility: hidden !important;
-        }
-        
-        /* Move chat input higher to avoid any bottom elements */
-        .stChatInput {
-            bottom: 10px !important;
-            z-index: 9999 !important;
-        }
-        
-        /* Make sure floating toolbar is above everything */
-        .nexus-toolbar {
-            bottom: 70px !important;
-            z-index: 9998 !important;
         }
     }
     
