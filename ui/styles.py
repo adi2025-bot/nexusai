@@ -1185,10 +1185,33 @@ def get_mobile_responsive_styles() -> str:
             opacity: 0.3 !important;
         }
         
-        /* Main container */
+        /* HIDE SIDEBAR BY DEFAULT ON MOBILE */
+        [data-testid="stSidebar"] {
+            transform: translateX(-100%) !important;
+            transition: transform 0.3s ease !important;
+        }
+        
+        [data-testid="stSidebar"][aria-expanded="true"] {
+            transform: translateX(0) !important;
+        }
+        
+        /* Main container - FULL WIDTH */
         .main .block-container {
-            padding: 1rem 1rem 7rem 1rem !important;
+            padding: 0.5rem 0.75rem 7rem 0.75rem !important;
             max-width: 100% !important;
+            margin-left: 0 !important;
+        }
+        
+        /* Remove left margin when sidebar collapsed */
+        .main {
+            margin-left: 0 !important;
+            width: 100% !important;
+        }
+        
+        /* Center welcome content */
+        .welcome-hero, .stMarkdown {
+            text-align: center !important;
+            width: 100% !important;
         }
         
         /* Welcome screen */
