@@ -1429,6 +1429,30 @@ def get_mobile_responsive_styles() -> str:
             font-size: 11px !important;
             padding: 4px 8px !important;
         }
+        
+        /* HIDE STREAMLIT BRANDING BADGE ON MOBILE */
+        [data-testid="stToolbar"],
+        footer,
+        #MainMenu,
+        .stDeployButton,
+        [data-testid="stStatusWidget"],
+        .viewerBadge_container__1QSob,
+        .styles_viewerBadge__1yB5_ {
+            display: none !important;
+            visibility: hidden !important;
+        }
+        
+        /* Move chat input higher to avoid any bottom elements */
+        .stChatInput {
+            bottom: 10px !important;
+            z-index: 9999 !important;
+        }
+        
+        /* Make sure floating toolbar is above everything */
+        .nexus-toolbar {
+            bottom: 70px !important;
+            z-index: 9998 !important;
+        }
     }
     
     /* Landscape orientation on mobile */
