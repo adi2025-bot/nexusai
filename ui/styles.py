@@ -1185,35 +1185,72 @@ def get_mobile_responsive_styles() -> str:
             opacity: 0.3 !important;
         }
         
-        /* Main container */
-        .main .block-container {
-            padding: 1rem 1rem 7rem 1rem !important;
-            max-width: 100% !important;
+        /* HIDE SIDEBAR BY DEFAULT ON MOBILE */
+        [data-testid="stSidebar"] {
+            transform: translateX(-100%) !important;
+            transition: transform 0.3s ease !important;
         }
         
-        /* Welcome screen */
+        [data-testid="stSidebar"][aria-expanded="true"] {
+            transform: translateX(0) !important;
+        }
+        
+        /* Main container - ensure full width and no left margin */
+        .main .block-container {
+            padding: 0.5rem 0.75rem 7rem 0.75rem !important;
+            max-width: 100% !important;
+            margin-left: 0 !important;
+        }
+        
+        /* Ensure main area takes full width */
+        .main {
+            margin-left: 0 !important;
+            width: 100% !important;
+        }
+        
+        section[data-testid="stSidebarContent"] {
+            width: 85vw !important;
+        }
+        
+        /* Welcome screen - CENTER properly */
         .welcome-hero {
             min-height: 50vh;
-            padding: 1.5rem;
+            padding: 1rem 0.5rem;
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
         }
         
         .welcome-icon {
-            font-size: 3.5rem;
+            font-size: 3rem;
+            margin: 0 auto;
         }
         
         .welcome-title {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
+            text-align: center;
+            word-wrap: break-word;
+            padding: 0 0.5rem;
         }
         
         .welcome-subtitle {
-            font-size: 1rem;
-            padding: 0 1rem;
+            font-size: 0.9rem;
+            padding: 0 0.5rem;
+            text-align: center;
         }
         
         .welcome-orb {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             filter: blur(40px);
+        }
+        
+        /* Quick actions - stack vertically */
+        .quick-actions {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+            padding: 0 0.5rem !important;
         }
         
         /* Chat messages - full width */
